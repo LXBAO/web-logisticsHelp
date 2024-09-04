@@ -1,0 +1,135 @@
+<wxs module="filter" src="../../utils.wxs"></wxs>
+    <view class="mains">
+
+    <view wx:if="{{tenantId==2}}">
+
+        <view   style="text-align: center; border-bottom: 2rpx solid #efefef;">
+            <image src =  "{{imageUrl == ''? '../../../image/touxiang.jpg': imageUrl}}" style="width: 220rpx; height: 220rpx; " bindtap="uploadAttachment" data-id="1"/>
+            
+        </view>
+       
+        <view class="common-text">
+            <view class="item-msg">教师姓名</view>
+            <view class="section">
+                {{userName}}   
+            </view>
+        </view>
+    
+        <view class="common-text">
+          
+          <view class="item-msg">教师电话</view>
+          <view  class="address-rights">
+              {{phone}}
+          </view>
+       </view>
+         
+        <view class="common-text">
+            <view class="item-msg">学校/地址</view>
+            <view class="section">
+                {{addressDetail}} 
+            </view>
+        </view>
+
+        <view class="common-text">
+            <view class="item-msg">可授科目</view>
+            <view class="section">
+                {{ filter.filterSubject(subjects,20)}}
+            </view>
+        </view>  
+        
+    </view>
+    <view wx:else>
+        <view class="common-text">
+            <view class="item-msg">家长姓名</view>
+            <view class="section">
+                {{userName}}   
+            </view>
+        </view>
+    
+
+         
+        <view class="common-text">
+            <view class="item-msg">家长电话</view>
+            <view class="section">
+                {{phone}} 
+            </view>
+        </view>
+
+        
+        
+
+         <view class="common-text">
+          
+            <view class="item-msg">服务地址</view>
+            <view  class="address-rights">
+                {{addressDetail}}
+            </view>
+         </view>
+    </view>
+
+
+        <view class="common-text">
+            <view class="item-msg">服务年纪</view>
+            <view  class="address-rights">
+                <picker mode = selector bindchange="bindPickerChange" value="{{index}}"  range="{{ageArrObj}}" range-key="text">
+                    <view> {{ageStr }}</view>
+                </picker>
+            
+            </view>
+        </view>
+
+        <view class="common-text">
+            <view class="item-msg">服务金额</view>
+            <view  class="address-rights">
+            {{amount}} （元） 
+            
+            </view>
+        </view>
+      
+        <view class="common-text" >
+            <view class="item-msg">上门时间</view>
+            <view  class="address-rights">
+                {{startTime}}
+            </view>
+         </view>
+
+         <view class="common-text">
+            <view class="item-msg">结束时间</view>
+            <view  class="address-rights">
+                {{endTime}}
+            </view>
+         </view>
+         <view class="common-text">
+            <view class="item-msg">订单状态</view>
+            <view  class="address-rights">
+             {{filter.filterOrderStatus(status)}}
+            </view>
+         </view>
+         <view  wx:if="{{remark != ''}}" class="textarea common-text" >
+            <view class="item-msg">家长备注</view>
+            <view  class="address-rights">
+                {{remark}}
+            </view>
+         </view>
+
+         
+         <view  wx:if="{{status == 4 || status==5}}" class="textarea common-text">
+            <view class="item-msg"> {{types ==1 ? '拒绝': '取消'}}原因</view>
+            <view  class="address-rights">
+             {{ description}}
+            </view>
+         </view>
+          
+    </view>
+
+ 
+
+     
+ 
+
+
+
+
+
+
+

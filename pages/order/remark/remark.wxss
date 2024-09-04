@@ -1,0 +1,31 @@
+
+   .section {
+    width: 58%;
+  }
+   
+  .item-msg {
+    width: 25%;
+    margin-right: 10rpx;
+  }
+  
+  .common-text {
+    height: 200rpx;
+    display: flex;
+    align-items: center;
+    background: #fff;
+ 
+    font-size: 28.68rpx;
+    color: #333;
+    padding: 0 20rpx;
+  }
+  
+  .title {
+    margin: 40rpx 40rpx;
+    
+  }
+
+  .radio{
+    display: block;
+    margin: 40rpx ;
+     
+  }

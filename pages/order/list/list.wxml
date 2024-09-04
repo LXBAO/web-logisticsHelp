@@ -1,0 +1,83 @@
+<scroll-view scroll-y='true' style="height:{{height}}px" bindscrolltolower='lower'>
+    <wxs module="filter" src="../../utils.wxs"></wxs>
+
+            <view class='xiangqing' wx:for="{{details}}" >
+                
+               <view wx:if="{{tenantId ==2}}" class='xiangqing_img font_size'  bindtap="openDetail" data-id="{{item}}">
+                    <image   src="{{item.imageUrl}}" ></image>
+                    
+                </view>
+
+                <view  wx:if="{{tenantId !=2}}" class='xiangqing_info'  bindtap="openDetail" data-id="{{item}}">
+                  
+                    <view >
+                        <text class='font_size'>家长姓名：{{item.userName}}</text> 
+                    </view>
+                    
+                    <view>
+                        <text  class='font_size'> 家长电话：{{item.phone}}</text> 
+                    </view>
+                    <view>
+                        <text class='font_size'>服务年纪：{{item.ageStr}}</text> 
+                    </view>
+                    <view>
+                        <text class='font_size'>服务金额：{{item.amount}}（元）</text> 
+                    </view>
+                   
+                </view>
+
+                <view wx:if="{{tenantId ==2}}" class='xiangqing_info' >
+                    <view >
+                        <text class='title'>教师姓名：{{item.userName}}</text> 
+                    </view>
+                    <view>
+                        <text class='font_size'>服务年纪：{{item.ageStr}}</text> 
+                    </view>
+                    <view>
+                        <text class='font_size'>服务金额：{{item.amount}}（元）</text> 
+                    </view>
+                   
+    
+                    <view>
+                        <text class='title'>上门时间：{{item.startTime}}</text> 
+                    </view>
+                    <view  > 
+                        
+                        <text class='title'> 订单状态：{{filter.filterOrderStatus(item.status)}}</text>
+                        <button wx:if="{{item.status < 3}}"   style="background-color: #007FFF; float:inline-end;" size="mini" bind:tap="cancel" data-id="{{item}}" type="primary">取消</button>
+                        <button wx:if="{{item.status == 3}}"   style="background-color: #007FFF; float:inline-end;" size="mini" bind:tap="openAssess" data-id="{{item}}" type="primary">评价</button>
+                    </view>
+                   
+                    
+                </view>
+
+
+                <view  wx:if="{{tenantId !=2}}" class='xiangqing_info'>
+                    <view>
+                      <text class='font_size'>家长性别：{{item.sex ==1? '男' : '女'}}</text> 
+                  </view>
+                  <view >
+                      <text class='font_size'>上门时间：{{item.startTime}}</text> 
+                  </view>
+                  
+                  <view>
+                      <text  class='font_size'>结束时间：{{item.endTime}}</text> 
+                  </view>
+                  
+                  <view  >
+                        
+                        <text class='title'> 订单状态：{{filter.filterOrderStatus(item.status)}}</text>
+            
+                        <button wx:if="{{item.status == 1}}"   style="background-color: #007FFF; float:inline-end;" size="mini" bind:tap="ordersTaking" data-id="{{item.id}}" type="primary">接单</button>
+                        <button wx:if="{{item.status == 2}}"   style="background-color: #007FFF; float:inline-end;" size="mini" bind:tap="rejectOrder" data-id="{{item}}" type="primary">拒绝</button>
+                    </view> 
+                 
+              </view>
+                 
+             
+            </view>
+            
+   
+    
+        
+    </scroll-view>    

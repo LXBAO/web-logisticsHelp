@@ -1,0 +1,38 @@
+.tab-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 96rpx;
+    background: white;
+    display: flex;
+    padding-bottom: env(safe-area-inset-bottom);
+   
+  }
+   
+  .tab-bar .tab-bar-item {
+    flex: 1;
+    text-align: center;
+      
+  }
+   
+  .left {
+    flex: 1;
+    text-align: left;
+      
+  }
+  .right {
+    flex: 1;
+    text-align: right;
+      
+  }
+  .itemImage {
+    width: 54rpx;
+    height: 54rpx;
+  }
+   
+  
+   .itemTitle {
+    font-size: 20rpx;
+  }
+  

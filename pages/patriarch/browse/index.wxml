@@ -1,0 +1,42 @@
+ 
+    <view class="mains">
+    
+      <view class="common-text">
+        <view class="item-msg">姓名 *</view>
+        <view class="section">
+          {{username}}   
+        </view>
+      </view>
+      <view class="common-text">
+        <view class="item-msg">性别 *</view>
+        <view class="section"  >
+            {{sex == 1 ? '男' : '女'}} 
+        </view>
+      </view>
+    
+      <view class="common-text">
+        <view class="item-msg">手机号码 *</view>
+        <view class="section">
+         {{phone}} 
+        </view>
+      </view>
+      <view class="common-text" >
+        <view class="item-msg">地址 *</view>
+        <view class="section">
+          {{address}} 
+        </view>
+      </view>
+      <view class="common-text">
+        <view class="item-msg">详细地址 *</view>
+        <view class="section">
+          {{addressDetail}} 
+        </view>
+      </view>
+      <view style="border-top: 2rpx solid #efefef ;"> <button form-type="button" style="background-color: #007FFF;"  bind:tap="edit" type="primary">编辑信息</button> </view>
+   </view>
+ 
+  
+ 
+ 
+  
+ 

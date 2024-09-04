@@ -1,0 +1,25 @@
+/**index.wxss**/
+ .button{
+    background-color: rgb(51, 143, 219); 
+    float:left; 
+    margin:10rpx 30rpx ;
+    color:aliceblue;
+ }
+ .clear{
+     clear: both;
+ }
+ .title{
+    font-weight: bolder;
+    color: rgb(51, 143, 219);
+ }
+  
+   
+  swiper {
+    width: 100%;
+    height: calc(100vw * 327 /  491);
+  }
+  image {
+    width: 100%;
+  }
+
+ 

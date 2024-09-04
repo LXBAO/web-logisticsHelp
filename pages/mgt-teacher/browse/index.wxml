@@ -1,0 +1,112 @@
+  
+    <view class="mains">
+        <wxs module="filter" src="../../utils.wxs"></wxs>
+        <!--
+      <view  style="text-align: center;">
+          <image src =  "{{imageUrl == ''? '../../../image/touxiang.jpg': imageUrl}}" style="width: 200rpx; height: 220rpx; " />
+        
+      </view> -->
+    <view class="common-text">
+      <view class="item-msg">姓名</view>
+      <view class="section">
+        {{username}}   
+      </view>
+    </view>
+    <view class="common-text">
+      <view class="item-msg">性别</view>
+      <view class="section"  >
+          {{sex == 1 ? '男' : '女'}} 
+      </view>
+    </view>
+  
+    <view class="common-text">
+      <view class="item-msg">手机号码</view>
+      <view class="section">
+       {{phone}} 
+      </view>
+    </view>
+    <view class="common-text" >
+      <view class="item-msg">地址</view>
+      <view class="section">
+        {{address}} 
+      </view>
+    </view>
+    <view class="common-text">
+      <view class="item-msg">学校</view>
+      <view class="section">
+        {{addressDetail}} 
+      </view>
+    </view>
+       
+    <view class="common-text" style="height: 200rpx;border-bottom: 2rpx solid #efefef;">
+        <view class="item-msg">可授年纪*</view>
+        <view class="section">
+           
+            <view wx:if="{{teacherInfoVO.amt > 0 }}"> 
+                <text>幼儿  </text>
+        
+                <text  decode="{{true}}">  &emsp;辅导金额&nbsp;:&nbsp; {{teacherInfoVO.amt}}</text>       
+            </view>
+
+            <view wx:if="{{teacherInfoVO.amt2 > 0 }}"> 
+                <text>小学  </text>
+        
+                <text  decode="{{true}}">  &emsp;辅导金额&nbsp;:&nbsp; {{teacherInfoVO.amt2}}</text>       
+            </view>
+
+            <view wx:if="{{teacherInfoVO.amt3 > 0 }}"> 
+                <text>初中  </text>
+        
+                <text  decode="{{true}}">  &emsp;辅导金额&nbsp;:&nbsp; {{teacherInfoVO.amt3}}</text>       
+            </view>
+
+            <view wx:if="{{teacherInfoVO.amt4 > 0 }}"> 
+                <text>高中  </text>
+        
+                <text  decode="{{true}}">  &emsp;辅导金额&nbsp;:&nbsp; {{teacherInfoVO.amt4}}</text>       
+            </view>
+        
+        </view>
+      </view>
+     
+      <view class="common-text"  style="height: 150rpx;border-bottom: 2rpx solid #efefef;">
+        <view class="item-msg">可授科目</view>
+        
+        <view  class="address-rights">
+            {{ filter.filterSubject(subjects,20)}}
+           
+        </view> 
+      </view>
+
+      
+<!--
+<view class="weui-uploader">
+
+    <view class="img-v weui-uploader__bd">
+    
+        <view class='pic' wx:for="{{attachmentVOList}}" wx:for-item="item" wx:key="*this">
+
+            <image class='weui-uploader__img ' style="width: 220rpx; height: 230rpx; "
+
+                    src="{{item.path}}"
+
+                    data-index="{{index}}" mode="aspectFill" bindtap="previewImg">
+
+                        <icon type='clear'   class="delete-btn" data-index="{{index}}" catchtap="deleteImg"></icon>
+
+            </image>
+
+        </view>
+
+    </view>
+</view>-->
+<view  style="clear: both;"> <button form-type="button" style="background-color: #007FFF;"  bind:tap="edit" type="primary">编辑信息</button> </view>
+  
+ </view>
+
+
+
+
+
+
+

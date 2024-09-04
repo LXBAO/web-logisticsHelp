@@ -1,0 +1,66 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/patriarch/basic-info/index",
+    "pages/mgt-teacher/basic-info/index",
+    "pages/mgt-teacher/list/list",
+    "pages/order/detail/index",
+    "pages/mgt-teacher/browse/index",
+    "pages/patriarch/browse/index",
+    "pages/order/list/list",
+    "pages/assess/add",
+    "pages/order/browse/index",
+    "pages/order/remark/remark"
+  ],
+  "tabBar": {
+    "custom": true,
+    "color": "#5F5F5F",
+    "selectedColor": "#07c160",
+    "borderStyle": "black",
+    "backgroundColor": "#F7F7F7",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/order/list/list",
+        "text": "订单"
+      },
+      {
+        "pagePath": "pages/mgt-teacher/browse/index",
+        "text": "我的"
+      },
+      {
+        "pagePath": "pages/mgt-teacher/list/list",
+        "text": "老师"
+      },
+      {
+        "pagePath": "pages/patriarch/browse/index",
+        "text": "我的信息"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+  
+    "navigationBarBackgroundColor": "#007FFF",
+    "navigationBarTitleText": "易点通",
+    "navigationBarTextStyle": "black"
+  },
+  "appid": "wxf05a87b9679f2bea",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置将用于小程序定位"
+    }
+  },
+  "requiredPrivateInfos": [
+    "getLocation",
+    "onLocationChange",
+    "startLocationUpdateBackground",
+    "chooseAddress"
+  ],
+  "style": "v2",
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
+}

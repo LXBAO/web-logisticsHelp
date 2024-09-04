@@ -1,0 +1,26 @@
+.imagecls {
+    height: 35rpx;
+    width: 30rpx;
+    padding: 0 0rpx;
+  }
+
+   
+  .section {
+    width: 58%;
+  }
+   
+  .item-msg {
+    width: 25%;
+    margin-right: 10rpx;
+  }
+  
+  .common-text {
+    height: 200rpx;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-top: 2rpx solid #efefef;
+    font-size: 28.68rpx;
+    color: #333;
+    padding: 0 20rpx;
+  }

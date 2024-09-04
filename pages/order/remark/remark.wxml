@@ -1,0 +1,39 @@
+ 
+ 
+   <form bindsubmit="formSubmit"  >
+        <view wx:if="{{types== '1'}}">
+            <view  class = "title"> 拒绝原因 *</view>
+            <radio-group bindchange="radioChanged" >
+                <view wx:for="{{rejectArr}}">
+                    <radio class="radio" value="{{item.id}}"  >{{item.name}}</radio>
+                </view>
+            </radio-group>
+        </view>
+   <view wx:else>
+    <view  class = "title"> 取消原因 *</view>
+    <radio-group bindchange="radioChanged">
+        <view wx:for="{{cancelArr}}">
+            <radio class="radio" value="{{item.id}}"  >{{item.name}}</radio>
+        </view>
+    </radio-group>
+   </view>
+
+   <view wx:if="{{id ==5}}" class="common-text">
+        <view class="item-msg">其他原因*</view>
+        <view class="section">
+          <textarea style="width: 100%;;height:200rpx; border: 2rpx #dedede solid"  bindblur="getDescription"  value="{{description}}"   />
+         
+        </view>
+    </view>
+   <view class="common-text">
+     <button form-type="submit" style="background-color: #007FFF;"  type="primary">提交</button>
+   </view>
+
+
+
+</form>
+
+
+
+
+

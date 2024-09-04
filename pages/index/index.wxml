@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<view  >
+
+    <view>
+  <swiper interval="3000" indicator-dots="true" autoplay="true" circular="true">
+    <swiper-item wx:for="{{images}}">
+      <image mode="widthFix" src="{{item}}"></image>
+    </swiper-item>
+    
+  </swiper>
+</view>
+<view class='button_container' wx:if="{{userId ==''}}">
+    <view class="title">我是》</view>
+    <block wx:for="{{teacherTypes}}" wx:key="teacherTypes">
+      <button   class="button" size="mini" bind:tap="registryUser" data-id="{{item.id}}">{{item.name}}</button>
+    </block>
+  </view>
+<view class='button_container'>
+    <view class="title clear">阶段》</view>
+    <block wx:for="{{age}}" wx:key="age">
+      <button   class="button" size="mini" bind:tap="teacherListJump">{{item.name}}</button>
+    </block>
+  </view>
+  <view class='button_container'>
+  <view class="title clear">文科》</view>
+    <block wx:for="{{humanities}}" wx:key="humanities">
+      <button   class="button" size="mini" bind:tap="teacherListJump">{{item.name}}</button>
+    </block>
+  </view>
+
+  <view class='button_container'>
+    <view class="title clear">理科》</view>
+    <block wx:for="{{science}}" wx:key="science">
+      <button    class="button" size="mini" bind:tap="teacherListJump">{{item.name}}</button>
+    </block>
+  </view>
+  <view class='button_container'>
+    <view class="title clear">艺术类》</view>
+    <block wx:for="{{art}}" wx:key="subjects">
+      <button    class="button" size="mini" bind:tap="teacherListJump">{{item.name}}</button>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,17 @@
+{
+  "component": true,
+  "navigationBarTitleText": "定位",
+  "usingComponents": {
+    "select": "./address"
+   
+  },
+
+  "sitemapLocation": "sitemap.json",
+  "plugins": {
+    "citySelector": {
+         "version": "1.0.1",
+         "provider": "wx03b97c96f76eff81"
+     }
+  }
+}
+ 

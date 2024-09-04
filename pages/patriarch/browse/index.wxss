@@ -1,0 +1,24 @@
+/* pages/patriarch/browse/index.wxss */.section {
+  width: 58%;
+}
+.address-rights {
+  display: flex;
+  align-items: center;
+}
+.item-msg {
+  width: 25%;
+  margin-right: 25rpx;
+}
+.common-text {
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-top: 2rpx solid #efefef;
+  font-size: 28.68rpx;
+  color: #333;
+  padding: 0 20rpx;
+}
+button{
+  margin-top: 20rpx;
+}

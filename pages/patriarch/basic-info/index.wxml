@@ -1,0 +1,51 @@
+  
+   <form bindsubmit="formSubmit" >
+    <view class="mains">
+    
+      <view class="common-text">
+        <view class="item-msg">姓名 *</view>
+        <view class="section">
+          <input type="text" placeholder="请填写姓名" name = "username" value="{{username}}"   placeholder-class="phcolor"></input>
+        </view>
+      </view>
+      <view class="common-text">
+        <view class="item-msg">性别 *</view>
+        <view class="section"  >
+          <radio-group bindchange="radioChange">
+            <radio class="radio" value="1"  checked="{{sex =='1'?true:false}}" >男</radio>
+            <radio class="radio" value="2" checked="{{sex =='2'?true:false}}">女</radio>
+          </radio-group>
+        </view>
+      </view>
+    
+      <view class="common-text">
+        <view class="item-msg">手机号码 *</view>
+        <view class="section">
+          <input type="number" name = "phone"  placeholder="请填写手机号码" value="{{phone}}" maxlength="11"   placeholder-class="phcolor"></input>
+        </view>
+      </view>
+      <view class="common-text" >
+        <view class="item-msg">地址 *</view>
+        <Address bind:addressData="getAddressData" locationArr="{{address}}"></Address>
+      </view>
+      <view class="common-text">
+        <view class="item-msg">详细地址 *</view>
+        <view class="section">
+          <input type="text" placeholder="街道、楼牌号等" value="{{addressDetail}}" bindblur="detailedAddressInput" placeholder-class="phcolor"></input>
+        </view>
+      </view>
+      <view wx:if="{{userId==0}}"  style="color: cadetblue; font-size: 28rpx;">
+      <view>温馨提示：身份证是为了实名制，提交后无法更改请谨慎操作。</view>
+      <view  >    证件信息为保密数据，平台所有人都无法查看。  </view>
+      <view  style=" display: inline-flex; width: 49%; white-space: nowrap"><image src="{{card1}}" style=" height: 100px; " bind:tap="uploadAttachment" data-id="1"></image></view>
+      <view style=" display: inline-flex; width: 49%; white-space: nowrap"><image src="{{card2}}" style="height: 100px; " bind:tap="uploadAttachment" data-id="2"></image></view>
+      </view>
+
+      <view style="border-top: 2rpx solid #efefef ;"> <button form-type="submit"  style="background-color: #007FFF;"  type="primary">{{text}}</button> </view>
+   </view>
+  </form>
+  
+ 
+ 
+  
+ 

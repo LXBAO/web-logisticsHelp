@@ -1,0 +1,58 @@
+ 
+   
+ 
+  .xiangqing{
+    display: flex;
+    flex-wrap:wrap;
+    width: 100%;
+    border-bottom: 8rpx #dedede solid;
+    padding-top:10rpx; 
+  }
+  .xiangqing_img{
+     
+    width: 40%;
+    padding: 25rpx;
+  }
+  .xiangqing_img image{
+    width: 100%;
+    height: 260rpx;
+  }
+  .xiangqing_info{
+    width: 50%;
+    padding-top: 25rpx;
+    padding-bottom: 25rpx;
+  }
+
+  
+  .xiangqing_info .zi{
+    border: 2rpx #FA8D33 solid;
+    color: #FA8D33;
+    padding:2rpx 10rpx;
+    font-size: 18rpx;
+    margin-right: 22rpx;
+    border-radius: 9rpx;
+  }
+  .xiangqing_info .title{
+    font-weight: 600;
+    line-height: 50rpx;
+    font-size: 28rpx;
+    color: #404040;
+   
+  }
+
+  .font_size{
+    font-weight: 600;
+    line-height: 50rpx;
+    font-size: 28rpx;
+    color: #404040;
+  }
+   
+  .my-button {
+    width: 100rpx; /* 设置按钮宽度，这里以200rpx为例 */
+    height: 40rpx; /* 设置按钮高度，这里以40rpx为例 */
+    background-color: #007AFF; /* 设置按钮背景颜色，这里以蓝色为例 */
+    color: #FFFFFF; /* 设置按钮字体颜色，这里以白色为例 */
+    border-radius: 4rpx; /* 设置按钮圆角，这里以4rpx为例 */
+  }
+   
+    

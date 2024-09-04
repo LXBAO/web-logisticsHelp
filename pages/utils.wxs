@@ -1,0 +1,125 @@
+ 
+var filter = {
+  numberToFixed: function(value){
+	return value.toFixed(2)
+  },
+  filterSubject: function(arr,max){
+  
+    var str='',index=0;
+     for(var i=0;i< items.length;i++){
+        if(index >= max){
+           
+            break;
+        }
+        if(items[i].name == arr[index]){
+            str+=' '+items[i].value;
+            index++;
+        } 
+       
+    }
+    if(arr.length > max){
+        str+=".";
+    }
+    return str;
+  },
+
+  filterAges: function(obj){
+  
+    var str=''
+    if(obj.atm > 0){
+        str+=' 幼儿 ';
+    }
+    if(obj.atm2 > 0){
+        str+=' 小学';
+    }
+    if(obj.atm3 > 0){
+        str+=' 初中';
+    }
+    if(obj.atm4 > 0){
+        str+=' 高中';
+    }
+    
+    return str;
+  },
+
+  filterAge: function(id){
+  
+   
+    
+    return ages[id];
+  },
+
+  filterOrderStatus: function(status){
+  
+     
+    
+    return orderStatus[status-1];
+  },
+  checkBoxChked: function(value,arr){
+    for(var i=0;i< arr.length;i++){
+       if(arr[i]==value){
+           return true;
+       }
+      
+    }
+    return false;
+ },
+
+
+  
+}
+ 
+// 导出对外暴露的属性
+var ages = ['幼儿','小学','初中','高中'];
+var orderStatus = ['已下单','已接单','支付','取消','已拒绝','已完成']
+var items= [
+  {
+      "name": "1",
+      "value": "数学"
+  }, 
+  {
+      "name": "2",
+      "value": "语文"
+  },
+  {
+    "name": "3",
+    "value": "英语"
+  } ,
+  {
+    "name": "4",
+    "value": "物理"
+  } ,
+  {
+    "name": "5",
+    "value": "化学"
+  },
+  {
+    "name": "6",
+    "value": "生物"
+  },  
+  {
+    "name": "7",
+    "value": "地理"
+  },
+  {
+    "name": "8",
+    "value": "历史"
+  },
+  {
+    "name": "9",
+    "value": "政治"
+  },
+  { "name": "11", "value": '书法' },
+  { "name": "12", "value": '舞蹈' },
+  { "name": "13", "value": '美术' }
+]
+
+module.exports = {
+  numberToFixed :filter.numberToFixed,
+  filterSubject: filter.filterSubject,
+  checkBoxChked : filter.checkBoxChked,
+  filterAges : filter.filterAges,
+  filterAge : filter.filterAge,
+  filterOrderStatus: filter.filterOrderStatus
+ 
+}

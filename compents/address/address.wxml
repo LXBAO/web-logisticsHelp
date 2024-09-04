@@ -1,0 +1,15 @@
+
+      
+      <view class="address-msg" >
+       
+        <view class="section" style="width: 350rpx;" bindtap='chooseAddress'>
+          <input  disabled="disabled" placeholder="省市区县、乡镇等" value="{{locationArr}}" bindblur="consigneeRegionInput" placeholder-class="phcolor"></input>
+        </view>
+        <view class="address-rights" bindtap="positionGetAddress">
+          <image src="../../image/location.jpg" style="width: 40rpx; height: 40rpx;"></image>
+          <view>定位</view>
+        </view>
+      </view>
+     
+    
+ 

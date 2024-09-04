@@ -1,0 +1,118 @@
+
+ 
+   <form bindsubmit="formSubmit" >
+    <wxs module="filter" src="../../utils.wxs"></wxs>
+    <view class="mains">
+      <view  style="text-align: center;">
+          <image src =  "{{imageUrl == ''? '../../../image/touxiang.jpg': imageUrl}}" style="width: 220rpx; height: 220rpx; " bindtap="uploadAttachment" data-id="1"/>
+        
+      </view>
+      <view class="common-text">
+        <view class="item-msg">姓名 *</view>
+        <view class="section">
+          <input type="text" placeholder="请填写姓名" name = "username" value="{{username}}" maxlength="20" required/>
+        </view>
+      </view>
+
+      <view class="common-text">
+        <view class="item-msg">性别 *</view>
+        <view class="section"  >
+          <radio-group bindchange="radioChange">
+            <radio class="radio" value="1"  checked="{{sex =='1'?true:false}}" >男</radio>
+            <radio class="radio" value="2" checked="{{sex =='2'?true:false}}">女</radio>
+          </radio-group>
+        </view>
+      </view>
+      <view class="common-text">
+        <view class="item-msg">手机号码 *</view>
+        <view class="section">
+          <input type="number" placeholder="请填写手机号码" value="{{phone}}" name = "phone" maxlength="11" placeholder-class="phcolor" required/>
+        </view>
+      </view>
+      <view class="common-text"   >
+        <view class="item-msg">地址 *</view>
+        <Address bind:addressData="getAddressData" locationArr="{{address}}"></Address>
+      </view>
+      <view wx:if="{{tenantId==1}}" class="common-text" >
+        <view class="item-msg">所在学校 *</view>
+        <input type="text" placeholder="请填写学校" value="{{addressDetail}}" bindblur="detailedAddressInput"   required/>
+      </view>
+       
+      <view class="common-text" style="height: 300rpx;border-bottom: 2rpx solid #efefef;">
+        <view class="item-msg">可授年纪*</view>
+        <view class="section">
+            
+            <view class="age">
+                <text  decode="{{true}}">幼儿&emsp;辅导金额&nbsp;:</text> 
+                <input  style="width: 240rpx; float:inline-end;" type="number" placeholder="单位(元/小时)" value="{{teacherInfoVO.amt}}" bindblur="checkAmount" data-id="amt" maxlength="8"  required/>
+   
+            </view>
+            <view class="age"  >
+                <text  decode="{{true}}">小学&emsp;辅导金额&nbsp;:</text> 
+                <input  style="width: 240rpx;  float:inline-end;" type="number" placeholder="单位(元/小时)" value="{{teacherInfoVO.amt2}}" bindblur="checkAmount" data-id="amt2" maxlength="8"  required/>
+            </view>
+
+
+            <view class="age"  >
+                <text  decode="{{true}}">初中&emsp;辅导金额&nbsp;:</text> 
+                <input  style="width: 240rpx;  float:inline-end;" type="number" placeholder="单位(元/小时)" value="{{teacherInfoVO.amt3}}" bindblur="checkAmount" data-id="amt3" maxlength="8"  required/>
+            </view>
+
+            <view class="age"  >
+                <text  decode="{{true}}">高中&emsp;辅导金额&nbsp;:</text> 
+                <input  style="width: 240rpx;  float:inline-end;" type="number" placeholder="单位(元/小时)" value="{{teacherInfoVO.amt4}}" bindblur="checkAmount" data-id="amt4" maxlength="8"  required/>
+            </view>
+ 
+        </view>
+      </view>
+
+      <view class="common-text"  style="height: 300rpx;border-bottom: 2rpx solid #efefef;">
+        <view class="item-msg">可授科目 *  </view>
+        <view style="width: 55%;" >
+           
+          <checkbox-group bindchange="checkboxChange">
+            <label wx:for="{{items}}" wx:key="items">
+                <checkbox value="{{item.name}}" checked="{{  filter.checkBoxChked(item.name, subjects)}}"/>{{item.value}}
+            </label>
+        </checkbox-group>
+        </view>
+      </view>
+
+      
+<view class="weui-uploader">
+
+<view class="img-v weui-uploader__bd">
+   
+  <view class='pic' wx:for="{{attachmentVOList}}" wx:for-item="item" wx:key="*this">
+
+      <image class='weui-uploader__img ' style="width: 220rpx; height: 230rpx; "
+
+              src="{{item.path}}"
+
+              data-index="{{index}}" mode="aspectFill" bindtap="previewImg">
+
+                <icon type='clear'   class="delete-btn" data-index="{{index}}" catchtap="deleteImg"></icon>
+
+      </image>
+
+  </view>
+
+    <!-- 用来提示用户上传图片 -->
+
+    <view   data-id="2" bindtap="uploadAttachment"> 
+    <image src="{{tenantId==1?'../../../image/student.jpg' : '../../../image/teachers.jpg'}}" style="  width: 200rpx;height: 230rpx;"></image>
+    </view>
+
+    </view>
+
+
+    </view>
+    <view style="border-top: 2rpx solid #efefef ;"> <button form-type="submit" style="background-color: #007FFF;"  type="primary">{{text}}</button> </view>
+   </view>
+  </form>
+
+  
+ 
+ 
+  
+ 

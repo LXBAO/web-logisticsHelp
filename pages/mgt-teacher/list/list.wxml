@@ -1,0 +1,96 @@
+
+<view  >
+
+    <view class="top">
+        <view class="search">
+        <view class="search_in">
+            <!-- 使用代码请更改图片路径 -->
+            <image src="../../../image/search.png"></image>
+            <input type="text" placeholder="请输入搜索内容" value="{{searchName}}" bindblur="bindBlurSearchName"/>
+            <view class="search_btn" bind:tap="search">搜索</view>
+        </view>
+        </view>
+    </view>
+ 
+
+    <view class="tabTit box">
+    <view class="flex1{{!tab[index]?' active':''}}" wx:for="{{tabTxt}}" wx:key="type" data-index="{{index}}" bindtap="filterTab">
+        <text>{{item}}</text>
+        <image src="../../../image/arrow.png"></image>
+    </view>
+    </view>
+ 
+    <view class="tabLayer" hidden="{{tab[0]}}">
+        <text class="{{tenantId==0?'active':''}}" data-id="0" data-index="0" data-txt="教师类别" bindtap="filter">不限</text>
+        <text class="{{tenantId==item.id?'active':''}}" wx:for="{{types}}" wx:key="pp" wx:for-item="item" data-id="{{item.id}}" data-index="0" data-txt="{{item.title}}" bindtap="filter">{{item.title}}</text>
+ 
+    </view>
+    <view class="tabLayer" hidden="{{tab[1]}}">
+        <text class="{{age==0?'active':''}}" data-id="" data-index="1" data-txt="可授阶段" bindtap="filter">不限</text>
+        <text class="{{age==1?'active':''}}" data-id="0" data-index="1" data-txt="幼儿" bindtap="filter">幼儿</text>
+        <text class="{{age==2?'active':''}}" data-id="1" data-index="1" data-txt="小学" bindtap="filter">小学</text>
+        <text class="{{age==3?'active':''}}" data-id="2" data-index="1" data-txt="初中" bindtap="filter">初中</text>
+        <text class="{{age==4?'active':''}}" data-id="3" data-index="1" data-txt="高中" bindtap="filter">高中</text>
+    </view>
+    <view   class="tabLayer"  hidden="{{tab[2]}}">
+        <text class="{{amoumt==0?'active':''}}" data-id="0" data-index="2" data-txt="价格区间" bindtap="filter">不限</text>
+        <text class="{{amoumt==1?'active':''}}" data-id="1" data-index="2" data-txt="48-99" bindtap="filter">48-99</text>
+        <text class="{{amoumt==2?'active':''}}" data-id="2" data-index="2" data-txt="99-199" bindtap="filter">99-199</text>
+        <text class="{{amoumt==3?'active':''}}" data-id="3" data-index="2" data-txt="199-399" bindtap="filter">199-399</text>
+        <text class="{{amoumt==3?'active':''}}" data-id="4" data-index="2" data-txt="399-9999" bindtap="filter">399-9999</text>
+    </view>
+    
+  
+
+    <scroll-view scroll-y='true' style="height:{{height}}px;" bindscrolltolower='lower'>
+        <view class="container">
+            <wxs module="filter" src="../../utils.wxs"></wxs>
+            <view class='xiangqing' wx:for="{{details}}" bindtap="openDetail" data-id="{{item}}">
+                <view class='xiangqing_img'>
+                    <image src="{{item.imageUrl}}"></image>
+                </view>
+                <view class='xiangqing_info' >
+                    <view>
+                        <text class='title'>姓名：{{item.username}}</text> 
+                    </view>
+                    <view>
+                        <text class='title'>性别：{{item.sex ==1? '男' : '女'}}</text > <text wx:if="{{item.distance != null}}" style="font-size: 22rpx; color: cadetblue; margin-left: 40rpx;"  > {{item.distance}} km</text> 
+                    </view>
+                    <view>
+                        <text class='title'>综合评分： </text> 
+                    
+                
+                    <image class="imagecls" wx:for="{{5}}" wx:for-item="assess" wx:key="index" data-name="item.assess" data-item="{{assess}}"
+                    src="{{assess >=item.assess  ? '../../../image/assess2.jpg':'../../../image/assess1.jpg'}}"></image>
+                
+                    </view>
+                    
+                    
+                    <view class='title'>
+                        <text >可授年纪：{{item.amt> 0 ? '幼儿':''}}  </text> 
+                        <text > {{item.amt2 > 0 ? '小学':''}}  </text> 
+                        <text > {{item.amt3 > 0 ? '初中':''}} </text> 
+                        <text > {{item.amt4 > 0 ? '高中':''}}</text> 
+                    </view> 
+                    <view>
+                        <text  class='title'>可授科目： {{ filter.filterSubject(item.subjects,4)}}</text>
+                    </view> 
+                    
+                </view>
+                    
+            </view>
+            <view wx:if="{{show}}">没有更多了</view>
+    
+        </view>
+    </scroll-view>   
+   
+</view>
+
+
+
+
+  
+ 
+ 
+  
+ 
